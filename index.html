@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <span class="logo-icon">✦</span>
+        Image<span>Gallery</span>
+      </a>
+
+      <p>Explore beautiful moments <span>♥</span></p>
+    </header>
+
+    <main class="main-container">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">VISUAL COLLECTION</span>
+          <h1>Discover the beauty<br />around you.</h1>
+          <p>Explore a collection of beautiful moments and inspiring places.</p>
+        </div>
+
+        <div class="hero-icon">📷</div>
+      </section>
+
+      <section class="gallery-section">
+        <div class="gallery-top">
+          <div>
+            <h2>Explore Gallery</h2>
+            <p id="imageCount">8 photos</p>
+          </div>
+
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search photos..."
+          />
+        </div>
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="nature">Nature</button>
+          <button class="filter-btn" data-filter="cities">Cities</button>
+          <button class="filter-btn" data-filter="animals">Animals</button>
+          <button class="filter-btn" data-filter="cars">Cars</button>
+
+          <button class="filter-btn" data-filter="favorites">
+            ♥ Favorites <span id="favoritesCount">0</span>
+          </button>
+
+          <button id="clearFavoritesBtn" class="clear-favorites-btn">
+            Clear Favorites
+          </button>
+        </div>
+
+        <div class="gallery" id="gallery">
+          <div
+            class="gallery-item"
+            data-category="nature"
+            data-title="Mountain Lake"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800"
+              alt="Mountain Lake"
+            />
+            <div class="image-overlay">
+              <span>Mountain Lake</span>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                ♡
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="cities"
+            data-title="City Lights"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=800"
+              alt="City Lights"
+            />
+            <div class="image-overlay">
+              <span>City Lights</span>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                ♡
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="animals"
+            data-title="Cute Cat"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800"
+              alt="Cute Cat"
+            />
+            <div class="image-overlay">
+              <span>Cute Cat</span>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                ♡
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="cars"
+            data-title="Luxury Car"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800"
+              alt="Luxury Car"
+            />
+            <div class="image-overlay">
+              <span>Luxury Car</span>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                ♡
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="nature"
+            data-title="Green Forest"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800"
+              alt="Green Forest"
+            />
+            <div class="image-overlay">
+              <span>Green Forest</span>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                ♡
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="nature"
+            data-title="Beautiful Sunset"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1472120435266-53107fd0c44a?w=800"
+              alt="Beautiful Sunset"
+            />
+            <div class="image-overlay">
+              <span>Beautiful Sunset</span>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                ♡
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="cities"
+            data-title="Modern Architecture"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800"
+              alt="Modern Architecture"
+            />
+            <div class="image-overlay">
+              <span>Modern Architecture</span>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                ♡
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="animals"
+            data-title="Beautiful Bird"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800"
+              alt="Beautiful Bird"
+            />
+            <div class="image-overlay">
+              <span>Beautiful Bird</span>
+              <button class="favorite-btn" aria-label="Add to favorites">
+                ♡
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p id="emptyMessage">No photos found.</p>
+      </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="close-btn" id="closeBtn">&times;</button>
+
+      <button class="nav-btn prev-btn" id="prevBtn">&#10094;</button>
+
+      <div class="lightbox-content">
+        <img id="lightboxImage" src="" alt="Selected photo" />
+        <div class="lightbox-info">
+          <h3 id="lightboxTitle"></h3>
+          <p id="lightboxCounter"></p>
+        </div>
+      </div>
+
+      <button class="nav-btn next-btn" id="nextBtn">&#10095;</button>
+    </div>
+
+    <footer>Made with <span>♥</span> for beautiful moments.</footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="index.js" defer></script>
+  </body>
+</html>
